@@ -1,0 +1,13 @@
+{
+  "domain": "valfrejus_weather",
+  "name": "Val Frejus Meteo",
+  "codeowners": ["@El-Daron"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/El-Daron/valfrejus-weather",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/El-Daron/valfrejus-weather/issues",
+  "requirements": ["beautifulsoup4>=4.12.0"],
+  "version": "2.0.0"
+}
