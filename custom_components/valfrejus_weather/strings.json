@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configuration Val Frejus Meteo",
+        "description": "Configurez votre station Val Frejus",
+        "data": {
+          "station": "Code station (defaut: valfrejus)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter",
+      "unknown": "Erreur inattendue"
+    },
+    "abort": {
+      "already_configured": "Cette station est deja configuree"
+    }
+  }
+}
