@@ -1,4 +1,4 @@
-# Val Frejus Meteo - Integration Home Assistant
+# ValFréjus Meteo - Integration Home Assistant
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 [![GitHub release](https://img.shields.io/github/release/El-Daron/valfrejus-weather.svg)](https://github.com/El-Daron/valfrejus-weather/releases)
