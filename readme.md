@@ -200,14 +200,16 @@ cards:
         content: Actualiser
         tap_action:
           action: call-service
-          service: homeassistant.update_entity
-          target: null
+          service: homeassistant.reload_config_entry
+          data:
+            entry_id: 01KB4NVW3HHTKT26J741JPZFV5
         card_mod:
           style: |
             ha-card {
               background: none !important;
               box-shadow: none !important;
             }
+
 ```
 
 ## Problèmes et suggestions
