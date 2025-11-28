@@ -1,6 +1,6 @@
 """Constants for the Val Frejus Meteo integration."""
 
-DOMAIN = "valfrejus_weather"
+DOMAIN = "valfrejus"
 CONF_STATION = "station"
 DEFAULT_STATION = "valfrejus"
 
