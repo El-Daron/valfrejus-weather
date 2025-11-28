@@ -105,13 +105,7 @@ cards:
                 secondary: |
                   Le : {{ states('sensor.val_frejus_village_derniere_chute') }}
                 icon: mdi:snowflake-alert
-                icon_color: >
-                  {% if states('sensor.val_frejus_village_neige_fraiche')|int >
-                  10 %}
-                    red
-                  {% else %}
-                    cyan
-                  {% endif %}
+                icon_color: cyan
                 layout: vertical
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_village_vitesse_vent
@@ -151,13 +145,7 @@ cards:
                 secondary: |
                   Le : {{ states('sensor.val_frejus_sommet_derniere_chute') }}
                 icon: mdi:snowflake-alert
-                icon_color: >
-                  {% if states('sensor.val_frejus_sommet_neige_fraiche')|int >
-                  10 %}
-                    red
-                  {% else %}
-                    cyan
-                  {% endif %}
+                icon_color: cyan
                 layout: vertical
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_sommet_vitesse_vent
@@ -220,7 +208,6 @@ cards:
               background: none !important;
               box-shadow: none !important;
             }
-
 ```
 
 ## Problèmes et suggestions
