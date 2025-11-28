@@ -5,9 +5,9 @@
 
 Integration Home Assistant pour récupérer les donnees météo et neige de la station de ski Val Frejus via Lumiplan.
 
-## Nouveauté v2.0
+## v1.0
 
-**Configuration via interface graphique !** Plus besoin de modifier `configuration.yaml`
+**Configuration via interface graphique !** Pas besoin de modifier `configuration.yaml`
 
 ## Données disponibles
 
@@ -41,7 +41,7 @@ L'intégration crée **17 sensors** avec les données suivantes :
 4. Ajoutez l'URL : `https://github.com/El-Daron/valfrejus-weather`
 5. Catégorie : `Integration`
 6. Cliquez sur "Add"
-7. Recherchez "Val Frejus Metéo" et installez
+7. Recherchez "ValFréjus Metéo" et installez
 8. **Redémarrez Home Assistant**
 
 ### Installation manuelle
@@ -68,7 +68,7 @@ L'intégration crée **17 sensors** avec les données suivantes :
 type: vertical-stack
 cards:
   - type: custom:mushroom-title-card
-    title: ⛷️ Val Frejus
+    title: ⛷️ ValFréjus
     subtitle: Conditions actuelles de ski
   - square: false
     type: grid
