@@ -1,5 +1,5 @@
 {
-  "name": "Val Frejus Meteo",
+  "name": "ValFréjus Meteo",
   "render_readme": true,
   "domains": ["sensor"],
   "homeassistant": "2023.1.0",
