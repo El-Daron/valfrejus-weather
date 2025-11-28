@@ -1,6 +1,6 @@
 {
-  "domain": "valfrejus_weather",
-  "name": "Val Frejus Meteo",
+  "domain": "valfrejus",
+  "name": "ValFréjus Meteo",
   "codeowners": ["@El-Daron"],
   "config_flow": true,
   "dependencies": [],
