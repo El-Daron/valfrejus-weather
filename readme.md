@@ -229,7 +229,7 @@ cards:
 
 ```
 
-## Problemes et suggestions
+## Problèmes et suggestions
 
 Ouvrez une issue sur [GitHub](https://github.com/El-Daron/valfrejus-weather/issues)
 
@@ -237,10 +237,10 @@ Ouvrez une issue sur [GitHub](https://github.com/El-Daron/valfrejus-weather/issu
 
 MIT License
 
-## Credits
+## Crédits
 
 Donnees fournies par [Lumiplan](https://bulletinv3.lumiplan.pro/)
 
 ---
 
-Si cette integration vous plait, n'hesitez pas a mettre une etoile sur GitHub !
+Si cette integration vous plaît, n'hesitez pas à mettre une etoile sur GitHub !
