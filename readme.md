@@ -75,32 +75,43 @@ cards:
     columns: 2
     cards:
       - type: vertical-stack
+        title: Village 1550m
         cards:
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_village_temperature_matin
-            name: Temperature Matin
+            name: Température Matin
             icon: mdi:thermometer
             primary_info: state
             secondary_info: name
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_village_temperature_apres_midi
-            name: Temperature Apres-midi
+            name: Température Après-midi
             icon: mdi:thermometer
             primary_info: state
             secondary_info: name
           - type: horizontal-stack
             cards:
-              - type: custom:mushroom-entity-card
-                entity: sensor.val_frejus_village_hauteur_neige
-                name: Neige
+              - type: custom:mushroom-template-card
+                primary: |
+                  {{ states('sensor.val_frejus_village_hauteur_neige') }} cm
+                secondary: |
+                  {{ states('sensor.val_frejus_village_qualite_neige') }}
                 icon: mdi:snowflake
                 icon_color: blue
                 layout: vertical
-              - type: custom:mushroom-entity-card
-                entity: sensor.val_frejus_village_neige_fraiche
-                name: Fraiche
+              - type: custom:mushroom-template-card
+                primary: |
+                  {{ states('sensor.val_frejus_village_neige_fraiche') }} cm
+                secondary: |
+                  Le : {{ states('sensor.val_frejus_village_derniere_chute') }}
                 icon: mdi:snowflake-alert
-                icon_color: cyan
+                icon_color: >
+                  {% if states('sensor.val_frejus_village_neige_fraiche')|int >
+                  10 %}
+                    red
+                  {% else %}
+                    cyan
+                  {% endif %}
                 layout: vertical
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_village_vitesse_vent
@@ -109,39 +120,44 @@ cards:
             secondary_info: state
             badge_icon: mdi:compass
             badge_color: grey
-          - type: custom:mushroom-entity-card
-            entity: sensor.val_frejus_village_qualite_neige
-            name: Qualite neige
-            icon: mdi:snowflake-variant
-            icon_color: light-blue
-        title: Village 1550m
       - type: vertical-stack
+        title: Sommet 2737m
         cards:
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_sommet_temperature_matin
-            name: Temperature Matin
+            name: Température Matin
             icon: mdi:thermometer
             primary_info: state
             secondary_info: name
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_sommet_temperature_apres_midi
-            name: Temperature Apres-midi
+            name: Température Après-midi
             icon: mdi:thermometer
             primary_info: state
             secondary_info: name
           - type: horizontal-stack
             cards:
-              - type: custom:mushroom-entity-card
-                entity: sensor.val_frejus_sommet_hauteur_neige
-                name: Neige
+              - type: custom:mushroom-template-card
+                primary: |
+                  {{ states('sensor.val_frejus_sommet_hauteur_neige') }} cm
+                secondary: |
+                  {{ states('sensor.val_frejus_sommet_qualite_neige') }}
                 icon: mdi:snowflake
                 icon_color: blue
                 layout: vertical
-              - type: custom:mushroom-entity-card
-                entity: sensor.val_frejus_sommet_neige_fraiche
-                name: Fraiche
+              - type: custom:mushroom-template-card
+                primary: |
+                  {{ states('sensor.val_frejus_sommet_neige_fraiche') }} cm
+                secondary: |
+                  Le : {{ states('sensor.val_frejus_sommet_derniere_chute') }}
                 icon: mdi:snowflake-alert
-                icon_color: cyan
+                icon_color: >
+                  {% if states('sensor.val_frejus_sommet_neige_fraiche')|int >
+                  10 %}
+                    red
+                  {% else %}
+                    cyan
+                  {% endif %}
                 layout: vertical
           - type: custom:mushroom-entity-card
             entity: sensor.val_frejus_sommet_vitesse_vent
@@ -150,14 +166,8 @@ cards:
             secondary_info: state
             badge_icon: mdi:compass
             badge_color: grey
-          - type: custom:mushroom-entity-card
-            entity: sensor.val_frejus_sommet_qualite_neige
-            name: Qualite neige
-            icon: mdi:snowflake-variant
-            icon_color: light-blue
-        title: Sommet 2737m
   - type: custom:mini-graph-card
-    name: Evolution Temperatures
+    name: Évolution Températures
     hours_to_show: 48
     points_per_hour: 0.5
     line_width: 3
@@ -181,6 +191,12 @@ cards:
         entity: weather.home
         show_conditions: true
         show_temperature: true
+        card_mod:
+          style: |
+            ha-card {
+              background: none !important;
+              box-shadow: none !important;
+            }
       - type: entity
         entity: sensor.val_frejus_derniere_mise_a_jour
         icon: mdi:update
@@ -188,44 +204,22 @@ cards:
         card_mod:
           style: |
             ha-card {
-               background: none !important;
-               box-shadow: none !important;
-               color: white !important;
-             }
+              background: none !important;
+              box-shadow: none !important;
+            }
       - type: template
         icon: mdi:refresh
         content: Actualiser
         tap_action:
           action: call-service
           service: homeassistant.update_entity
-          target:
-            entity_id: sensor.val_frejus_village_temperature_matin
+          target: null
         card_mod:
           style: |
             ha-card {
-               background: none !important;
-               box-shadow: none !important;
-               color: white !important;
-             }
-  - type: custom:mushroom-title-card
-    title: Informations complementaires
-  - type: entities
-    show_header_toggle: false
-    entities:
-      - entity: sensor.val_frejus_village_direction_vent
-        name: Direction vent Village
-        icon: mdi:compass
-        secondary_info: none
-      - entity: sensor.val_frejus_sommet_direction_vent
-        name: Direction vent Sommet
-        icon: mdi:compass
-      - entity: sensor.val_frejus_village_derniere_chute
-        name: Derniere chute Village
-        icon: mdi:calendar-clock
-      - entity: sensor.val_frejus_sommet_derniere_chute
-        name: Derniere chute Sommet
-        icon: mdi:calendar-clock
-    state_color: false
+              background: none !important;
+              box-shadow: none !important;
+            }
 
 ```
 
