@@ -3,31 +3,31 @@
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
 [![GitHub release](https://img.shields.io/github/release/El-Daron/valfrejus-weather.svg)](https://github.com/El-Daron/valfrejus-weather/releases)
 
-Integration Home Assistant pour recuperer les donnees meteo et neige de la station de ski Val Frejus via Lumiplan.
+Integration Home Assistant pour récupérer les donnees météo et neige de la station de ski Val Frejus via Lumiplan.
 
-## Nouveaute v2.0
+## Nouveauté v2.0
 
 **Configuration via interface graphique !** Plus besoin de modifier `configuration.yaml`
 
-## Donnees disponibles
+## Données disponibles
 
-L'integration cree **17 sensors** avec les donnees suivantes :
+L'intégration crée **17 sensors** avec les données suivantes :
 
 ### Village (1550m)
-- Temperature matin et apres-midi (°C)
+- Température matin et après-midi (°C)
 - Vitesse et direction du vent
 - Hauteur de neige totale (cm)
-- Qualite de la neige
+- Qualité de la neige
 - Neige fraiche (cm)
-- Date derniere chute de neige
+- Date dernière chute de neige
 
 ### Sommet - Punta Bagna (2737m)
-- Temperature matin et apres-midi (°C)
+- Température matin et après-midi (°C)
 - Vitesse et direction du vent
 - Hauteur de neige totale (cm)
-- Qualite de la neige
+- Qualité de la neige
 - Neige fraiche (cm)
-- Date derniere chute de neige
+- Date dernière chute de neige
 
 **Mise a jour automatique toutes les 6 heures**
 
@@ -36,29 +36,29 @@ L'integration cree **17 sensors** avec les donnees suivantes :
 ### Via HACS (Recommande)
 
 1. Ouvrez HACS dans Home Assistant
-2. Cliquez sur les 3 points en haut a droite
-3. Selectionnez "Custom repositories"
+2. Cliquez sur les 3 points en haut à droite
+3. Sélectionnez "Custom repositories"
 4. Ajoutez l'URL : `https://github.com/El-Daron/valfrejus-weather`
-5. Categorie : `Integration`
+5. Catégorie : `Integration`
 6. Cliquez sur "Add"
-7. Recherchez "Val Frejus Meteo" et installez
-8. **Redemarrez Home Assistant**
+7. Recherchez "Val Frejus Metéo" et installez
+8. **Redémarrez Home Assistant**
 
 ### Installation manuelle
 
-1. Telechargez le dossier `custom_components/valfrejus_weather`
+1. Téléchargez le dossier `custom_components/valfrejus_weather`
 2. Copiez-le dans votre dossier `custom_components` de Home Assistant
-3. Redemarrez Home Assistant
+3. Redémarrez Home Assistant
 
 ## Configuration
 
 **Configuration via l'interface graphique**
 
-1. Allez dans **Configuration** -> **Integrations**
-2. Cliquez sur **+ Ajouter une integration**
+1. Allez dans **Configuration** -> **Intégrations**
+2. Cliquez sur **+ Ajouter une intégration**
 3. Recherchez **"Val Frejus"**
 4. Suivez l'assistant de configuration
-5. C'est tout ! Les sensors sont automatiquement crees
+5. C'est tout ! Les sensors sont automatiquement crées
 
 **Aucune modification de `configuration.yaml` necessaire !**
 
